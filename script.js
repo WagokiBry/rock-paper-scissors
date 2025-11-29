@@ -10,9 +10,10 @@ console.log(getComputerChoice());
 
 function getHumanChoice(){
   const userInput = prompt("Enter either rock, paper or scissors")  
+return userInput;
 }
 
-getHumanChoice()
+console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
