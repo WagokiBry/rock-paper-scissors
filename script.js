@@ -9,11 +9,16 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function getHumanChoice(){
-  const userInput = prompt("Enter either rock, paper or scissors")  
-return userInput;
+  const userInput = prompt("Enter either rock, paper or scissors") 
+const userChoice = userInput.toLowerCase();
+  return userChoice;
 }
 
 console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice,computerChoice){
+
+}
