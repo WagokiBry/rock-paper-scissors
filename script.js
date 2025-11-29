@@ -14,6 +14,7 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+let draw = 0;
 let counter = 0;
 
 function playRound(humanChoice, computerChoice) {
@@ -44,9 +45,11 @@ function playRound(humanChoice, computerChoice) {
 
     function updateScores(roundResult) {
         if (roundResult.includes("You WIN!")) {
-            humanScore += 1;
+            ++humanScore;
         } else if (roundResult.includes("Computer WINS!")) {
-            computerScore += 1;
+            ++computerScore;
+        } else {
+            ++draw;
         }
         ++counter;
     }
@@ -58,19 +61,38 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
+
+
+
+
+function playGame (){
+
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
 
 
-// function playGame (){
-// let counter = 0;
+}
 
-// }
-
-// playGame()
+playGame()
 
 console.log(counter);
 
-console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}`);
+console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
