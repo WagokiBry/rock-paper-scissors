@@ -54,3 +54,15 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(humanSelection,computerSelection));
+
+function updateScores(roundResult) {
+    if (roundResult.includes("You WIN!")) {
+        humanScore += 1;
+    } else if (roundResult.includes("Computer WINS!")) {
+        computerScore += 1;
+    }
+}
+
+updateScores(playRound(humanSelection, computerSelection));
+
+console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}`);
