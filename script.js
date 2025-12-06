@@ -15,7 +15,7 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 let draw = 0;
-let counter = 0;
+let counter = 5;
 
 function playRound(humanChoice, computerChoice) {
     const result =
@@ -51,7 +51,7 @@ function playRound(humanChoice, computerChoice) {
         } else {
             ++draw;
         }
-        ++counter;
+
     }
 
     updateScores(result);
@@ -61,25 +61,17 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+    for (let i = counter; i >= 1; i--) {
 
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+        let humanSelection;
 
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+        humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
 
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+    }
 
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+
 
 
 }
