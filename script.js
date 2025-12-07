@@ -10,14 +10,18 @@ container.addEventListener("click", (e)=>{
 
     switch(target){
         case "Rock": 
-console.log("Rock has been pressed");
-break
+
+console.log(getHumanChoice(target))
+break;
+
  case "Paper": 
 console.log("Paper has been pressed");
 break;
+
  case "Scissors": 
 console.log("Scissors has been pressed");
 break;
+
 default:
     console.log("Press a button")
     }
@@ -34,10 +38,10 @@ function getComputerChoice() {
     return choice;
 }
 
-function getHumanChoice() {
-    const userInput = prompt("Enter either rock, paper or scissors")
-    const userChoice = userInput.toLowerCase();
-    return userChoice;
+function getHumanChoice(value) {
+   
+    
+    return value;
 }
 
 let humanScore = 0;
