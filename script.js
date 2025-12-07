@@ -29,11 +29,13 @@ container.addEventListener("click", (e) => {
             break;
 
         case "Paper":
-            console.log("Paper has been pressed");
+             playGame()
+            console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
             break;
 
         case "Scissors":
-            console.log("Scissors has been pressed");
+             playGame()
+            console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
             break;
 
         default:
