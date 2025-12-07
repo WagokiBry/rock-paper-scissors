@@ -4,6 +4,10 @@ const scissors = document.querySelector("#Scissors");
 const scoreboard = document.querySelector("#Scoreboard");
 const container = document.querySelector("#container");
 
+container.addEventListener("click", (e)=>{
+    
+})
+
 
 
 
