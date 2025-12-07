@@ -1,7 +1,10 @@
 const rock = document.querySelector("#Rock");
 const paper = document.querySelector("#Paper");
 const scissors = document.querySelector("#Scissors");
-const scoreboard = document.querySelector("#Scoreboard")
+const scoreboard = document.querySelector("#Scoreboard");
+const container = document.querySelector("#container");
+
+
 
 
 function getComputerChoice() {
