@@ -25,16 +25,16 @@ container.addEventListener("click", (e) => {
 
     switch (target) {
         case "Rock":
-playGame()
-             break;
+            playGame()
+            break;
 
         case "Paper":
-             playGame()
+            playGame()
             break;
 
         case "Scissors":
-             playGame()
-             break;
+            playGame()
+            break;
 
         default:
             console.log("Press a button")
@@ -76,7 +76,7 @@ function playRound(humanChoice, computerChoice) {
         } else {
             ++draw;
         }
-++counter;
+        ++counter;
     }
 
     updateScores(result);
@@ -86,28 +86,25 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
-      
-    
-
     let humanSelection;
     humanSelection = getHumanChoice(target);
     let computerSelection = getComputerChoice();
-let toggler = false;
+    let toggler = false;
     console.log(counter)
-    if(counter<=5){
+    if (counter <= 5) {
         !toggler
-playRound(humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection);
 
-console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
-scoreboard.textContent = `Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`;
+        console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
+        scoreboard.textContent = `Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`;
+
     }
-else if(counter===6){
-       let scores =  humanScore>computerScore?
-    alert("You Win!Play Again!"):humanScore<computerScore?
-    alert("You lose, try again!"):
-alert("Draw!Play Again!")
-     
-        
+    else if (counter === 6) {
+        let scores = humanScore > computerScore ?
+            alert("You Win!Play Again!") : humanScore < computerScore ?
+                alert("You lose, try again!") :
+                alert("Draw!Play Again!")
+
         counter = 1;
         humanScore = 0;
         computerScore = 0;
@@ -115,8 +112,6 @@ alert("Draw!Play Again!")
         scoreboard.textContent = `Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}
        `;
     }
-    
-
 }
 
 
