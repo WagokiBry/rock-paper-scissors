@@ -4,14 +4,29 @@ const scissors = document.querySelector("#Scissors");
 const scoreboard = document.querySelector("#Scoreboard");
 const container = document.querySelector("#container");
 
+let humanScore = 0;
+let computerScore = 0;
+let draw = 0;
+let counter = 5;
+
+function getComputerChoice() {
+    const randomVal = Math.random();
+    const choice = randomVal < 0.3333 ? "rock" : randomVal < 0.6666 ? "paper" : "scissors";
+    return choice;
+}
+
+function getHumanChoice(value) {
+   return value;
+}
+
 container.addEventListener("click", (e)=>{
 
     target = e.target.id;
 
     switch(target){
         case "Rock": 
-
-console.log(getHumanChoice(target))
+playGame()
+console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
 break;
 
  case "Paper": 
@@ -32,27 +47,14 @@ default:
 
 
 
-function getComputerChoice() {
-    const randomVal = Math.random();
-    const choice = randomVal < 0.3333 ? "rock" : randomVal < 0.6666 ? "paper" : "scissors";
-    return choice;
-}
 
-function getHumanChoice(value) {
-   
-    
-    return value;
-}
 
-let humanScore = 0;
-let computerScore = 0;
-let draw = 0;
-let counter = 5;
+
 
 function playRound(humanChoice, computerChoice) {
     const result =
         // 1. HUMAN CHOOSES ROCK
-        humanChoice === "rock" ? (
+        humanChoice === "Rock" ? (
             computerChoice === "rock" ? "Draw." :
                 computerChoice === "paper" ? "Computer WINS! Paper covers Rock." :
                     "You WIN! Rock crushes Scissors." // computerChoice === "scissors"
@@ -91,25 +93,21 @@ function playRound(humanChoice, computerChoice) {
     return result;
 }
 
-// function playGame() {
+function playGame() {
 
-//     for (let i = counter; i >= 1; i--) {
+   
 
-//         let humanSelection;
+        let humanSelection;
 
-//         humanSelection = getHumanChoice();
-//         let computerSelection = getComputerChoice();
-//         playRound(humanSelection, computerSelection);
+        humanSelection = getHumanChoice(target);
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
 
-//     }
+    
 
-
-
-
-// }
+}
 
 // playGame()
 
 
 
-console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
