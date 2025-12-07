@@ -53,14 +53,14 @@ function playRound(humanChoice, computerChoice) {
         ) :
 
             // 2. HUMAN CHOOSES PAPER
-            humanChoice === "paper" ? (
+            humanChoice === "Paper" ? (
                 computerChoice === "rock" ? "You WIN! Paper covers Rock." :
                     computerChoice === "paper" ? "Draw." :
                         "Computer WINS! Scissors cut Paper." // computerChoice === "scissors"
             ) :
 
                 // 3. HUMAN CHOOSES SCISSORS (The final possibility, otherwise it's an invalid input)
-                humanChoice === "scissors" ? (
+                humanChoice === "Scissors" ? (
                     computerChoice === "rock" ? "Computer WINS! Rock crushes Scissors." :
                         computerChoice === "paper" ? "You WIN! Scissors cut Paper." :
                             "Draw." // computerChoice === "scissors"
