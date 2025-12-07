@@ -16,40 +16,32 @@ function getComputerChoice() {
 }
 
 function getHumanChoice(value) {
-   return value;
+    return value;
 }
 
-container.addEventListener("click", (e)=>{
+container.addEventListener("click", (e) => {
 
     target = e.target.id;
+    switch (target) {
+        case "Rock":
+            playGame()
+            console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
+            break;
 
-    switch(target){
-        case "Rock": 
-playGame()
-console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
-break;
+        case "Paper":
+            console.log("Paper has been pressed");
+            break;
 
- case "Paper": 
-console.log("Paper has been pressed");
-break;
+        case "Scissors":
+            console.log("Scissors has been pressed");
+            break;
 
- case "Scissors": 
-console.log("Scissors has been pressed");
-break;
-
-default:
-    console.log("Press a button")
+        default:
+            console.log("Press a button")
     }
 
-  
+
 })
-
-
-
-
-
-
-
 
 function playRound(humanChoice, computerChoice) {
     const result =
@@ -95,19 +87,14 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
-   
-
-        let humanSelection;
-
-        humanSelection = getHumanChoice(target);
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-
-    
+    let humanSelection;
+    humanSelection = getHumanChoice(target);
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
 
 }
 
-// playGame()
+
 
 
 
