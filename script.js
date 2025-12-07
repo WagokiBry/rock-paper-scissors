@@ -5,7 +5,24 @@ const scoreboard = document.querySelector("#Scoreboard");
 const container = document.querySelector("#container");
 
 container.addEventListener("click", (e)=>{
-    
+
+    target = e.target.id;
+
+    switch(target){
+        case "Rock": 
+console.log("Rock has been pressed");
+break
+ case "Paper": 
+console.log("Paper has been pressed");
+break;
+ case "Scissors": 
+console.log("Scissors has been pressed");
+break;
+default:
+    console.log("Press a button")
+    }
+
+  
 })
 
 
