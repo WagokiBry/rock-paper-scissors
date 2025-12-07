@@ -23,25 +23,18 @@ container.addEventListener("click", (e) => {
 
     target = e.target.id;
 
-    
-        switch (target) {
+    switch (target) {
         case "Rock":
-
- playGame()
-            
-
-           
-            break;
+playGame()
+             break;
 
         case "Paper":
              playGame()
-            console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
             break;
 
         case "Scissors":
              playGame()
-            console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
-            break;
+             break;
 
         default:
             console.log("Press a button")
@@ -93,6 +86,8 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
+      
+    
 
     let humanSelection;
     humanSelection = getHumanChoice(target);
@@ -104,16 +99,21 @@ let toggler = false;
 playRound(humanSelection, computerSelection);
 
 console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
-    } else{
-        alert("Game Over! PlayAgain")
-        console.log("Max Games played")
+scoreboard.textContent = `Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`;
+    }
+else if(counter===6){
+       let scores =  humanScore>computerScore?
+    alert("You Win!Play Again!"):humanScore<computerScore?
+    alert("You lose, try again!"):
+alert("Draw!Play Again!")
+     
+        
         counter = 1;
         humanScore = 0;
         computerScore = 0;
         draw = 0;
-       
-return "Max games played"
-
+        scoreboard.textContent = `Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}
+       `;
     }
     
 
