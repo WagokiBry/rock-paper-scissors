@@ -7,7 +7,7 @@ const container = document.querySelector("#container");
 let humanScore = 0;
 let computerScore = 0;
 let draw = 0;
-let counter = 5;
+let counter = 1;
 
 function getComputerChoice() {
     const randomVal = Math.random();
@@ -22,10 +22,15 @@ function getHumanChoice(value) {
 container.addEventListener("click", (e) => {
 
     target = e.target.id;
-    switch (target) {
+
+    
+        switch (target) {
         case "Rock":
-            playGame()
-            console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
+
+ playGame()
+            
+
+           
             break;
 
         case "Paper":
@@ -41,7 +46,6 @@ container.addEventListener("click", (e) => {
         default:
             console.log("Press a button")
     }
-
 
 })
 
@@ -79,7 +83,7 @@ function playRound(humanChoice, computerChoice) {
         } else {
             ++draw;
         }
-
+++counter;
     }
 
     updateScores(result);
@@ -89,12 +93,33 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
+
     let humanSelection;
     humanSelection = getHumanChoice(target);
     let computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+let toggler = false;
+    console.log(counter)
+    if(counter<=5){
+        !toggler
+playRound(humanSelection, computerSelection);
+
+console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
+    } else{
+        alert("Game Over! PlayAgain")
+        console.log("Max Games played")
+        counter = 1;
+        humanScore = 0;
+        computerScore = 0;
+        draw = 0;
+       
+return "Max games played"
+
+    }
+    
 
 }
+
+
 
 
 
