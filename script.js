@@ -1,4 +1,7 @@
-// console.log("Hello World, this is Rock-Paper-Scissors!");
+const rock = document.querySelector("#Rock");
+const paper = document.querySelector("#Paper");
+const scissors = document.querySelector("#Scissors");
+
 
 function getComputerChoice() {
     const randomVal = Math.random();
@@ -59,25 +62,25 @@ function playRound(humanChoice, computerChoice) {
     return result;
 }
 
-function playGame() {
+// function playGame() {
 
-    for (let i = counter; i >= 1; i--) {
+//     for (let i = counter; i >= 1; i--) {
 
-        let humanSelection;
+//         let humanSelection;
 
-        humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
+//         humanSelection = getHumanChoice();
+//         let computerSelection = getComputerChoice();
+//         playRound(humanSelection, computerSelection);
 
-    }
-
-
+//     }
 
 
-}
 
-playGame()
 
-console.log(counter);
+// }
+
+// playGame()
+
+
 
 console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore} , Draw: ${draw}`);
